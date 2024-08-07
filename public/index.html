@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Landing Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <div class="text-lg font-semibold text-gray-800">
+            <a href="#" class="text-2xl font-bold text-blue-500">ShopName</a>
+          </div>
+          <div class="hidden md:flex space-x-4">
+            <a href="#" class="text-gray-800 hover:text-blue-500">Home</a>
+            <a href="#" class="text-gray-800 hover:text-blue-500">Shop</a>
+            <a href="#" class="text-gray-800 hover:text-blue-500">About</a>
+            <a href="#" class="text-gray-800 hover:text-blue-500">Contact</a>
+          </div>
+          <div class="hidden md:flex space-x-4">
+            <a
+              href="pages/signUp/signUp.html"
+              id="btnSignUp"
+              class="text-gray-800 hover:text-blue-500"
+              >SignUp</a
+            >
+            <a
+              href="pages/signIn/signIn.html"
+              id="btnLogIn"
+              class="text-gray-800 hover:text-blue-500"
+              >LogIn</a
+            >
+            <a
+              href="pages/productForm/productForm.html"
+              id="btnAddPtoduct"
+              class="text-gray-800 hover:text-blue-500"
+              >Add Products</a
+            >
+            <a
+              onclick="logOut()"
+              href="index.html"
+              id="btnLogOut"
+              class="text-gray-800 hover:text-blue-500 hidden"
+              >LogOut</a
+            >
+          </div>
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-800 focus:outline-none"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <div class="container mx-auto px-4 py-2">
+        <a href="#" class="block text-gray-800 hover:text-blue-500 py-2"
+          >Home</a
+        >
+        <a href="#" class="block text-gray-800 hover:text-blue-500 py-2"
+          >Shop</a
+        >
+        <a href="#" class="block text-gray-800 hover:text-blue-500 py-2"
+          >About</a
+        >
+        <a href="#" class="block text-gray-800 hover:text-blue-500 py-2"
+          >Contact</a
+        >
+        <a
+          href="pages/signUp/signUp.html"
+          id="btnSignUpMobile"
+          class="block text-gray-800 hover:text-blue-500 py-2"
+          >SignUp</a
+        >
+        <a
+          href="pages/signIn/signIn.html"
+          id="btnLogInMobile"
+          class="block text-gray-800 hover:text-blue-500 py-2"
+          >LogIn</a
+        >
+        <a
+          onclick="logOut()"
+          href="index.html"
+          id="btnLogOutMobile"
+          class="block text-gray-800 hover:text-blue-500 py-2 hidden"
+          >LogOut</a
+        >
+        <a
+          href="pages/productForm/productForm.html"
+          id="btnAddProductMobile"
+          class="block text-gray-800 hover:text-blue-500 py-2 hidden"
+          >Add Products</a
+        >
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-500 text-white py-20">
+      <div class="container mx-auto text-center">
+        <h1 class="text-5xl font-bold">Welcome to ShopName</h1>
+        <p class="mt-4 text-xl">
+          Discover the best products at unbeatable prices.
+        </p>
+        <a
+          href="#"
+          class="mt-6 inline-block bg-white text-blue-500 font-semibold py-3 px-6 rounded-full"
+          >Shop Now</a
+        >
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-20">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-800">Featured Products</h2>
+        <div
+          id="perent"
+          class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+        >
+          <!-- Product 1 -->
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src="https://via.placeholder.com/300"
+              alt="Product 1"
+              class="w-full h-64 object-cover rounded-t-lg"
+            />
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Product 1</h3>
+            <p class="mt-2 text-gray-600">$99.99</p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded-full"
+              >Add to Cart</a
+            >
+          </div>
+          <!-- Product 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src="https://via.placeholder.com/300"
+              alt="Product 2"
+              class="w-full h-64 object-cover rounded-t-lg"
+            />
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Product 2</h3>
+            <p class="mt-2 text-gray-600">$149.99</p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded-full"
+              >Add to Cart</a
+            >
+          </div>
+          <!-- Product 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src="https://via.placeholder.com/300"
+              alt="Product 3"
+              class="w-full h-64 object-cover rounded-t-lg"
+            />
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Product 3</h3>
+            <p class="mt-2 text-gray-600">$199.99</p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded-full"
+              >Add to Cart</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-gray-100 py-20">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-800">What Our Customers Say</h2>
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+          <!-- Testimonial 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <p class="text-gray-600">
+              "This is the best store I've ever shopped at. The products are
+              amazing and the customer service is top-notch!"
+            </p>
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">John Doe</h3>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <p class="text-gray-600">
+              "Great prices and fast shipping. I will definitely be a returning
+              customer."
+            </p>
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Jane Smith</h3>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <p class="text-gray-600">
+              "I love the variety of products available. There's something for
+              everyone."
+            </p>
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">
+              Emily Johnson
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 ShopName. All rights reserved.</p>
+        <div class="mt-4">
+          <a href="#" class="text-white hover:text-blue-500 px-4"
+            >Privacy Policy</a
+          >
+          <a href="#" class="text-white hover:text-blue-500 px-4"
+            >Terms of Service</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+    <script>
+      // Toggle mobile menu
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>
